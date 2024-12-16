@@ -38,3 +38,6 @@
 
 # rspec persistance between runs for focus on failed tests, etc.
 /spec/examples.txt
+
+/doc/*
+/.yardoc/*
