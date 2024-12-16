@@ -1,0 +1,8 @@
+app/lib/geo_ip.rb 5adadddec3a889cc9942bc213f0b7327d5cf0069
+app/lib/geocode.rb 69236598af8e0390367d2b41a12693c233273348
+app/lib/http_api.rb df73c4d561de5029ce574561bc795d3429df40bb
+app/lib/open_meteo.rb 62a1536fdbc2aadb96405a62353951954a738fdb
+app/lib/rate_limiter.rb 8f483b93ed7a61d0e014b73841ca0de6c1dd8cbc
+app/models/application_record.rb 3ddc096670c55bf364746588cd1f8471008ca6e8
+app/helpers/application_helper.rb eef3d3adce96afe8b14c19b6135323f47543d979
+app/controllers/application_controller.rb 62d0cd5ba72c9666e83cbc2addce7237799f2c9b

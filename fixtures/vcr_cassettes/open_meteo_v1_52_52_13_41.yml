@@ -1,0 +1,33 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.open-meteo.com/v1/forecast?current=precipitation&latitude=52.52&longitude=13.41&precipitation_unit=inch&temperature_unit=fahrenheit&wind_speed_unit=mph
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.open-meteo.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 16 Dec 2024 00:15:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"latitude":52.52,"longitude":13.419998,"generationtime_ms":0.033974647521972656,"utc_offset_seconds":0,"timezone":"GMT","timezone_abbreviation":"GMT","elevation":38.0,"current_units":{"time":"iso8601","interval":"seconds","temperature_2m":"°F","relative_humidity_2m":"%","wind_gusts_10m":"mp/h","precipitation":"inch"},"current":{"time":"2024-12-16T00:15","interval":900,"temperature_2m":47.8,"relative_humidity_2m":93,"wind_gusts_10m":31.5,"precipitation":0.000}}'
+  recorded_at: Mon, 16 Dec 2024 00:15:35 GMT
+recorded_with: VCR 6.3.1

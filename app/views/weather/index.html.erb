@@ -1,0 +1,11 @@
+<%= notice %>
+<ul>
+  <% Array(@geocodes).each do |geocode| %>
+    <li>
+      <%= link_to(weather_path(Geocode.zip(geocode))) do %>
+        <%= geocode['display_name'] %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<%= render "form", address: @address %>

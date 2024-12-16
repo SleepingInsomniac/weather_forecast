@@ -1,0 +1,17 @@
+<h2><%= @geocode['display_name'] %></h2>
+<aside>
+  <%= link_to "https://maps.google.com/?q=#{@geocode['lat']},#{@geocode['lon']}" do %>
+    lat: <%= @geocode['lat'].to_f.round(3) %>, lon: <%= @geocode['lon'].to_f.round(3) %>
+  <% end %>
+</aside>
+
+<h3>Currently conditions</h3>
+<h2>Tempurature: <%= @forecast.dig('current', 'temperature_2m') %><%= @forecast.dig('current_units', 'temperature_2m') %></h2>
+<h2>Relative Humidity: <%= @forecast.dig('current', 'relative_humidity_2m') %><%= @forecast.dig('current_units', 'relative_humidity_2m') %></h2>
+<h2>Wind Speed: <%= @forecast.dig('current', 'wind_gusts_10m')%><%= @forecast.dig('current_units', 'wind_gusts_10m') %></h2>
+<h2>Precipitation: <%= @forecast.dig('current', 'precipitation')%><%= @forecast.dig('current_units', 'precipitation') %></h2>
+
+<hr>
+
+<h3>Search Weather</h3>
+<%= render "form", address: @address %>

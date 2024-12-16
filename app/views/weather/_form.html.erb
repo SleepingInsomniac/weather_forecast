@@ -1,0 +1,37 @@
+<%= form_with(model: address, url: root_path) do |form| %>
+  <% if address.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(address.errors.count, "error") %> prohibited this lookup from suceeding</h2>
+
+      <ul>
+        <% address.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :street %>
+    <%= form.text_field :street %>
+  </div>
+
+  <div>
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :state %>
+    <%= form.select :state, states_hash, prompt: "State" %>
+  </div>
+
+  <div>
+    <%= form.label :zip %>
+    <%= form.text_field :zip %>
+  </div>
+
+  <div>
+    <%= form.submit "Lookup Address" %>
+  </div>
+<% end %>

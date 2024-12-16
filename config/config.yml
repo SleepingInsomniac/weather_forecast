@@ -1,0 +1,15 @@
+defaults: &defaults
+  redis_url: redis://127.0.0.1:6379/1
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
+

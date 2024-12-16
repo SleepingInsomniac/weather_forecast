@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ipinfo.io/204.48.26.195/json?token=<API-Token>
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - ipinfo.io
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '220'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 16 Dec 2024 00:15:35 GMT
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Via:
+      - 1.1 google
+      Strict-Transport-Security:
+      - max-age=2592000; includeSubDomains
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "ip": "204.48.26.195",
+          "city": "North Bergen",
+          "region": "New Jersey",
+          "country": "US",
+          "loc": "40.8043,-74.0121",
+          "org": "AS14061 DigitalOcean, LLC",
+          "postal": "07047",
+          "timezone": "America/New_York"
+        }
+  recorded_at: Mon, 16 Dec 2024 00:15:35 GMT
+recorded_with: VCR 6.3.1
