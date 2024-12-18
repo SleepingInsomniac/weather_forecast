@@ -15,7 +15,6 @@ module OpenMeteo
       cache_key = [latitude, longitude].map { |n| n.to_f.round(2) }.join(",")
       cache.fetch("open_meteo_#{cache_key}", expires_in: 30.minutes) do
         make_request do
-# hourly=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,precipitation,surface_pressure,wind_speed_10m,wind_gusts_10m&temperature_unit=fahrenheit
           HTTP.get(URI.join(BASE_URI, 'forecast'), params: {
             latitude: latitude,
             longitude: longitude,
@@ -24,7 +23,7 @@ module OpenMeteo
             wind_speed_unit: 'mph',
             precipitation_unit: 'inch'
           })
-        end.parse
+        end.parse.tap { |r| r['cached_at'] = Time.zone.now.iso8601 }
       end
     end
   end

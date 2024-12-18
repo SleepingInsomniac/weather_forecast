@@ -11,6 +11,10 @@
 <h2>Wind Speed: <%= @forecast.dig('current', 'wind_gusts_10m')%><%= @forecast.dig('current_units', 'wind_gusts_10m') %></h2>
 <h2>Precipitation: <%= @forecast.dig('current', 'precipitation')%><%= @forecast.dig('current_units', 'precipitation') %></h2>
 
+<div>
+  Cached: <%= time_ago_in_words(Time.zone.parse(@forecast['cached_at'])) %> ago
+</div>
+
 <hr>
 
 <h3>Search Weather</h3>
