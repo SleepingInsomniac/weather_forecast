@@ -33,5 +33,5 @@ class HTTPAPI
   end
 
     # Class level cache reader, shared among all instances
-  def self.cache = @cache ||= ActiveSupport::Cache::MemoryStore.new
+  def self.cache = @cache ||= ActiveSupport::Cache::RedisCacheStore.new(redis: REDIS)
 end

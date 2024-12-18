@@ -12,7 +12,7 @@
 <h2>Precipitation: <%= @forecast.dig('current', 'precipitation')%><%= @forecast.dig('current_units', 'precipitation') %></h2>
 
 <div>
-  Cached: <%= time_ago_in_words(Time.zone.parse(@forecast['cached_at'])) %> ago
+  Cached: <%= time_ago_in_words(Time.zone.parse(@forecast['cached_at'])) %> ago as <%= @forecast['cache_key'] %>
 </div>
 
 <hr>

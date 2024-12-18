@@ -23,7 +23,10 @@ module OpenMeteo
             wind_speed_unit: 'mph',
             precipitation_unit: 'inch'
           })
-        end.parse.tap { |r| r['cached_at'] = Time.zone.now.iso8601 }
+        end.parse.merge({
+          'cached_at' => Time.zone.now.iso8601,
+          'cache_key' => "open_meteo_#{cache_key}"
+        })
       end
     end
   end
